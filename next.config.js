@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuration for Cloudflare Workers
-  output: process.env.BUILD_FOR_WORKERS ? 'standalone' : undefined,
+  // Configuration for Cloudflare Pages - use standalone output
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
