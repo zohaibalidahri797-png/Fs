@@ -3,5 +3,14 @@
   "name": "fs-nextjs",
   
   // Cloudflare Pages configuration
-  "pages_build_output_dir": ".next/standalone"
+  "pages_build_output_dir": ".next/standalone",
+  
+  // Compatibility date for Workers
+  "compatibility_date": "2026-09-15",
+  
+  // Build configuration
+  "build": {
+    "command": "npm run build",
+    "cwd": "/"
+  }
 }
