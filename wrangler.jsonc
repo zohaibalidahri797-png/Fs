@@ -1,0 +1,32 @@
+{
+  // Wrangler configuration for Next.js on Cloudflare Workers
+  // Using the recommended vinext approach for full-stack Next.js applications
+  
+  "name": "fs-nextjs",
+  "type": "javascript",
+  "main": "worker.js",
+  
+  // For Cloudflare Pages deployment, this config supports Next.js build output
+  "build": {
+    "command": "npm run build",
+    "cwd": "./",
+    "watch_paths": ["src/**/*.ts", "src/**/*.tsx"]
+  },
+  
+  // Direct Workers configuration (if using OpenNext)
+  "routes": [
+    {
+      "pattern": "^/api/.*$",
+      "zone_name": "example.com"
+    }
+  ],
+  
+  // Environment variables (configure these in Cloudflare dashboard)
+  "env": {
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}
